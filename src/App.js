@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {HeaderComponent, ContentComponent} from './components';
+import { HeaderComponent, ContentComponent } from "./components";
 
 const Mainpage = styled.div`
   background-color: black;
@@ -26,13 +26,19 @@ const Content = styled.div`
 `;
 
 function App() {
+  const [filterKey, setFilterKey] = useState({
+    tags: [],
+    dateFrom: new Date().toDateString(),
+    dateTo: new Date().toDateString(),
+  });
+
   return (
     <Mainpage>
       <Header>
-        <HeaderComponent />
+        <HeaderComponent filterKey={filterKey} setFilterKey={setFilterKey} />
       </Header>
       <Content>
-        <ContentComponent />
+        <ContentComponent filterKey={filterKey} />
       </Content>
     </Mainpage>
   );
