@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import {HeaderComponent, ContentComponent} from './components';
+
+const Mainpage = styled.div`
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 720px;
+  height: calc(100vh - 16px);
+  margin: 0px auto;
+  overflow: hidden;
+`;
+const Header = styled.header`
+  background-color: red;
+  width: 720px;
+  height: 80px;
+`;
+
+const Content = styled.div`
+  background-color: orange;
+  width: 720px;
+  height: 100%;
+  overflow-y: scroll;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Mainpage>
+      <Header>
+        <HeaderComponent />
+      </Header>
+      <Content>
+        <ContentComponent />
+      </Content>
+    </Mainpage>
   );
 }
 
