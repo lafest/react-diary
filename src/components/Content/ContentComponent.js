@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from "react";
+import DiaryItem from "./DiaryItem";
 
 const ContentComponent = (props) => {
-    return <div></div>
-}
+  const { filterKey } = props;
+  const [diaryList, setDiaryList] = useState([]);
 
-export default ContentComponent
+  return (
+    <>
+      {diaryList.map((v, i) => (
+        <DiaryItem
+          {...v}
+        />
+      ))}
+    </>
+  );
+};
+
+export default ContentComponent;
