@@ -7,29 +7,30 @@ const Mainpage = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 720px;
+  width: 800px;
   height: calc(100vh - 16px);
   margin: 0px auto;
   overflow: hidden;
 `;
 const Header = styled.header`
-  background-color: red;
-  width: 720px;
+  background-color: white;
+  width: 800px;
   height: 80px;
 `;
 
 const Content = styled.div`
+  position:relative;
   background-color: orange;
-  width: 720px;
+  width: 800px;
   height: 100%;
   overflow-y: scroll;
 `;
 
 function App() {
   const [filterKey, setFilterKey] = useState({
-    tags: [],
-    dateFrom: new Date().toDateString(),
-    dateTo: new Date().toDateString(),
+    tags: null, //array
+    dateFrom: null, //Date object
+    dateTo: null, //Date object
   });
 
   return (
