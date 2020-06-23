@@ -27,7 +27,6 @@ const TagsDiv = styled.div`
 const DiaryItem = (props) => {
   const { date, title, content, tags } = props;
   const [selected, setSelected] = useState(false);
-  console.log(selected);
   return (
     <>
       <DiaryDiv onClick={() => setSelected(true)}>
